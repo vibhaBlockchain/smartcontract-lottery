@@ -1,11 +1,13 @@
 dependencies:
   - smartcontractkit/chainlink-brownie-contracts@0.3.1
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
   #- nomiclabs/hardhat/packages/hardhat-core@2.8.3
   - OpenZeppelin/openzeppelin-contracts@4.4.2
 compiler:
   solc:
     remappings:
       - '@chainlink-brownie-contracts=smartcontractkit/chainlink-brownie-contracts@0.3.1'
+      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
       #- '@hardhat=nomiclabs/hardhat/packages/hardhat-core@2.8.3'
       - '@openzeppelin-contracts=OpenZeppelin/openzeppelin-contracts@4.4.2'
 
@@ -13,10 +15,19 @@ dotenv: .env
 networks:
   default: development
   development:
-    eth-usd-price-feed: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
+    eth_usd_price_feed: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
+    fee: 100000000000000000
+    keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311'
   mainnet-fork:
-    eth-usd-price-feed: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
+    eth_usd_price_feed: '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419'
     verify: False
+  rinkely:
+    eth_usd_price_feed: '0x'
+    vrf_coordinator: '0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B'
+    link_token: '0x'
+    fee: 100000000000000000
+    keyhash: '0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311'
+    verify: True
   ganache-local:
     verify: False
   wallets:

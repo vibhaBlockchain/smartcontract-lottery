@@ -7,10 +7,10 @@ from scripts.helpful_scripts import (
 from web3 import Web3
 
 
-def test_get_entrance_fee():
+"""def test_get_entrance_fee():
     account = get_accounts()
     lottery = Lottery.deploy(
-        get_contract(),
+        get_contract("eth_usd_price_feed"),
         {"from": account},
     )
     print(
@@ -18,4 +18,4 @@ def test_get_entrance_fee():
     )
 
     assert int(lottery.getEntranceFee()) > Web3.toWei(0.018, "ether")
-    assert lottery.getEntranceFee() < Web3.toWei(0.026, "ether")
+    assert lottery.getEntranceFee() < Web3.toWei(0.026, "ether")"""
